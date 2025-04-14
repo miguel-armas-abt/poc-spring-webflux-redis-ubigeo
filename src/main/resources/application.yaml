@@ -1,0 +1,33 @@
+server:
+  port: ${SERVER_PORT:8018}
+
+spring:
+  application:
+    name: ubigeo-v1
+
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2500
+  cache:
+    type: redis #enable cache
+
+configuration:
+  error-messages:
+    Default: No hemos podido realizar tu operación. Estamos trabajando para solucionar el inconveniente.
+
+  filePaths:
+    departments: ubigeo/departments.json
+    provinces: ubigeo/provinces.json
+    districts: ubigeo/districts.json
+
+  cache:
+    departments:
+      time-to-live: MINUTE
+      key-prefix: poc.departments
+    provinces:
+      time-to-live: MINUTE
+      key-prefix: poc.provinces
+    districts:
+      time-to-live: MINUTE
+      key-prefix: poc.districts
