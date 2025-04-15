@@ -5,6 +5,6 @@ import reactor.core.publisher.Flux;
 
 public interface ProvinceService {
 
-  Flux<ProvinceEntity> findProvincesByDepartmentId(String departmentId);
+  Flux<ProvinceEntity> findByDepartmentId(String departmentId);
 
 }

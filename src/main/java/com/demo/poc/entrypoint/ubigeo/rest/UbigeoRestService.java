@@ -1,4 +1,4 @@
-package com.demo.poc.entrypoint.provinces.rest;
+package com.demo.poc.entrypoint.ubigeo.rest;
 
 import com.demo.poc.commons.custom.constants.RestConstants;
 
@@ -14,14 +14,14 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.n
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class ProvinceRestService {
+public class UbigeoRestService {
 
-  @Bean("provinces")
-  public RouterFunction<ServerResponse> build(ProvinceHandler provinceHandler) {
+  @Bean("ubigeo")
+  public RouterFunction<ServerResponse> build(UbigeoHandler ubigeoHandler) {
     return nest(
         path(RestConstants.BASE_URI),
         route()
-            .GET("/provinces", accept(APPLICATION_NDJSON), provinceHandler::findByDepartmentId)
+            .GET("/ubigeo", accept(APPLICATION_NDJSON), ubigeoHandler::findUbigeo)
             .build()
     );
   }

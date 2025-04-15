@@ -1,4 +1,4 @@
-package com.demo.poc.entrypoint.provinces.rest;
+package com.demo.poc.entrypoint.ubigeo.rest;
 
 import java.util.Map;
 
@@ -6,9 +6,8 @@ import com.demo.poc.commons.core.restserver.ServerResponseBuilder;
 import com.demo.poc.commons.core.validations.headers.DefaultHeaders;
 import com.demo.poc.commons.core.validations.headers.HeaderValidator;
 import com.demo.poc.commons.core.validations.params.ParamValidator;
-import com.demo.poc.entrypoint.provinces.dto.params.ProvinceParam;
-import com.demo.poc.entrypoint.provinces.repository.entity.ProvinceEntity;
-import com.demo.poc.entrypoint.provinces.service.ProvinceService;
+import com.demo.poc.entrypoint.ubigeo.dto.params.UbigeoParam;
+import com.demo.poc.entrypoint.ubigeo.service.UbigeoService;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
@@ -21,23 +20,24 @@ import static com.demo.poc.commons.core.restclient.utils.QueryParamFiller.extrac
 
 @Component
 @RequiredArgsConstructor
-public class ProvinceHandler {
+public class UbigeoHandler {
 
-  private final ProvinceService provinceService;
+  private final UbigeoService ubigeoService;
   private final HeaderValidator headerValidator;
   private final ParamValidator paramValidator;
 
-  public Mono<ServerResponse> findByDepartmentId(ServerRequest serverRequest) {
+  public Mono<ServerResponse> findUbigeo(ServerRequest serverRequest) {
     Map<String, String> headers = extractHeadersAsMap(serverRequest);
     headerValidator.validate(headers, DefaultHeaders.class);
 
-    ProvinceParam params = paramValidator.validateAndRetrieve(extractQueryParamsAsMap(serverRequest), ProvinceParam.class);
+    UbigeoParam params = paramValidator.validateAndRetrieve(extractQueryParamsAsMap(serverRequest), UbigeoParam.class);
 
-    return ServerResponseBuilder.buildFlux(
-        ServerResponse.ok(),
-        serverRequest.headers(),
-        ProvinceEntity.class,
-        provinceService.findByDepartmentId(params.getDepartmentId())
-    );
+    String ubigeoCode = params.getDepartmentId() + params.getProvinceId() + params.getDistrictId();
+    return ubigeoService.findUbigeo(ubigeoCode)
+        .flatMap(response -> ServerResponseBuilder
+            .buildMono(
+                ServerResponse.ok(),
+                serverRequest.headers(),
+                response));
   }
 }

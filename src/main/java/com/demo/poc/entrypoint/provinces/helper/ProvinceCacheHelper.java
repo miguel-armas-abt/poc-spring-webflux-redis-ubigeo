@@ -21,7 +21,7 @@ public class ProvinceCacheHelper {
   private final RedisManager redisManager;
   private final ProvinceRepository provinceRepository;
 
-  public Flux<ProvinceEntity> findProvincesByDepartmentId(String departmentId) {
+  public Flux<ProvinceEntity> findByDepartmentId(String departmentId) {
     return redisManager.isRedisAvailable()
         .filter(isRedisAvailable -> isRedisAvailable)
         .flatMapMany(isRedisAvailable -> getProvincesFromCacheIfPresent(departmentId))

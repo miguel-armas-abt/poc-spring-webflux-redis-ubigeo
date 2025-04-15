@@ -30,9 +30,12 @@ public enum ErrorDictionary {
   ERROR_MAPPING_REFLECTIVE_PARAMS("10.00.05", "Error mapping reflective params", INTERNAL_SERVER_ERROR, ReflectiveParamMappingException.class),
   ERROR_ASSIGN_REFLECTIVE_PARAMS("10.00.06", "Error assign reflective params", INTERNAL_SERVER_ERROR, ReflectiveParamAssignmentException.class),
   INVALID_STREAMING_DATA("10.00.07", "Streaming data is not processable", INTERNAL_SERVER_ERROR, InvalidStreamingData.class),
-  UNEXPECTED_SSL_EXCEPTION("10.00.08", "Unexpected SSL error for HTTP client", INTERNAL_SERVER_ERROR, UnexpectedSslException.class),;
+  UNEXPECTED_SSL_EXCEPTION("10.00.08", "Unexpected SSL error for HTTP client", INTERNAL_SERVER_ERROR, UnexpectedSslException.class),
 
   //custom=01
+  NO_SUCH_DEPARTMENT("10.01.09", "No such department", BAD_REQUEST, NoSuchDepartmentException.class),
+  NO_SUCH_PROVINCE("10.01.10", "No such province", BAD_REQUEST, NoSuchProvinceException.class),
+  NO_SUCH_DISTRICT("10.01.11", "No such district", BAD_REQUEST, NoSuchDistrictException.class),;
 
   private final String code;
   private final String message;
