@@ -1,7 +1,5 @@
 package com.demo.poc.entrypoint.departments.repository;
 
-
-import java.util.Comparator;
 import java.util.List;
 
 import com.demo.poc.commons.core.serialization.JsonSerializer;
