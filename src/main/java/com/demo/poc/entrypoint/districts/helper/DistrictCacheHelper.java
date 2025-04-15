@@ -2,6 +2,7 @@ package com.demo.poc.entrypoint.districts.helper;
 
 import com.demo.poc.commons.custom.cache.RedisManager;
 import com.demo.poc.commons.custom.constants.SymbolConstants;
+import com.demo.poc.commons.custom.enums.UbigeoType;
 import com.demo.poc.commons.custom.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.districts.repository.DistrictRepository;
 import com.demo.poc.entrypoint.districts.repository.entity.DistrictEntity;
@@ -14,8 +15,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DistrictCacheHelper {
-
-  private static final String CACHE_NAME = "districts";
 
   private final ApplicationProperties properties;
   private final ReactiveRedisTemplate<String, Object> redisTemplate;
@@ -40,7 +39,7 @@ public class DistrictCacheHelper {
   }
 
   private String buildCacheKey(String provinceId, String departmentId) {
-    return properties.searchCache(CACHE_NAME).getKeyPrefix()
+    return properties.searchCache(UbigeoType.DISTRICTS.getLabel()).getKeyPrefix()
         + SymbolConstants.COLON + provinceId
         + SymbolConstants.COLON + departmentId;
   }

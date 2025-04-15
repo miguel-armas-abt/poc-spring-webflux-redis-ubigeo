@@ -1,6 +1,7 @@
 package com.demo.poc.entrypoint.departments.helper;
 
 import com.demo.poc.commons.custom.cache.RedisManager;
+import com.demo.poc.commons.custom.enums.UbigeoType;
 import com.demo.poc.commons.custom.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.departments.repository.DepartmentRepository;
 import com.demo.poc.entrypoint.departments.repository.entity.DepartmentEntity;
@@ -13,8 +14,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DepartmentCacheHelper {
-
-  private static final String CACHE_NAME = "departments";
 
   private final ApplicationProperties properties;
   private final ReactiveRedisTemplate<String, Object> redisTemplate;
@@ -38,7 +37,7 @@ public class DepartmentCacheHelper {
   }
 
   private String buildCacheKey() {
-    return properties.searchCache(CACHE_NAME).getKeyPrefix();
+    return properties.searchCache(UbigeoType.DEPARTMENTS.getLabel()).getKeyPrefix();
   }
 
 }

@@ -1,7 +1,5 @@
 package com.demo.poc.entrypoint.districts.repository;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.function.Predicate;
 
 import com.demo.poc.commons.core.serialization.JsonSerializer;
@@ -26,9 +24,7 @@ public class DistrictRepository {
 
     public Flux<DistrictEntity> findAll() {
         String districtPath = properties.getFilePaths().get(UbigeoType.DISTRICTS.getLabel());
-        List<DistrictEntity> departments = jsonSerializer.readListFromFile(districtPath, DistrictEntity.class);
-        return Flux.fromIterable(departments)
-            .sort(Comparator.comparing(DistrictEntity::getId));
+        return jsonSerializer.readListFromFile(districtPath, DistrictEntity.class);
     }
 
     private static Predicate<DistrictEntity> filterByProvinceId(String provinceId) {

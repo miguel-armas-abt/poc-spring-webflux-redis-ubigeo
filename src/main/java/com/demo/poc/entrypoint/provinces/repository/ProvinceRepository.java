@@ -1,7 +1,5 @@
 package com.demo.poc.entrypoint.provinces.repository;
 
-import java.util.List;
-
 import com.demo.poc.commons.core.serialization.JsonSerializer;
 import com.demo.poc.commons.custom.properties.ApplicationProperties;
 import com.demo.poc.commons.custom.enums.UbigeoType;
@@ -26,7 +24,6 @@ public class ProvinceRepository {
 
   private Flux<ProvinceEntity> findAll() {
     String provincePath = properties.getFilePaths().get(UbigeoType.PROVINCES.getLabel());
-    List<ProvinceEntity> departments = jsonSerializer.readListFromFile(provincePath, ProvinceEntity.class);
-    return Flux.fromIterable(departments);
+    return jsonSerializer.readListFromFile(provincePath, ProvinceEntity.class);
   }
 }
