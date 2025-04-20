@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "d13f1c77-0ff9-4e38-bc65-5ec9df6c77b7",
-		"name": "ubigeo",
+		"name": "poc-ubigeo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33527392"
 	},
@@ -95,7 +95,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8018/poc/ubigeo/v1/districts?departmentId=01&provinceId=01",
+					"raw": "http://localhost:8018/poc/ubigeo/v1/districts?departmentId=01&provinceId=99",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -114,7 +114,7 @@
 						},
 						{
 							"key": "provinceId",
-							"value": "01"
+							"value": "99"
 						}
 					]
 				}
