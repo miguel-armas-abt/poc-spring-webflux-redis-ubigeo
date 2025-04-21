@@ -12,13 +12,18 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "channel-id",
-						"value": "APP",
+						"key": "timestamp",
+						"value": "{{$isoTimestamp}}",
 						"type": "text"
 					},
 					{
 						"key": "trace-id",
-						"value": "1234",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "channel-id",
+						"value": "APP",
 						"type": "text"
 					}
 				],
@@ -45,13 +50,18 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "channel-id",
-						"value": "APP",
+						"key": "timestamp",
+						"value": "{{$isoTimestamp}}",
 						"type": "text"
 					},
 					{
 						"key": "trace-id",
-						"value": "1234",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "channel-id",
+						"value": "APP",
 						"type": "text"
 					}
 				],
@@ -84,13 +94,18 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "channel-id",
-						"value": "APP",
+						"key": "timestamp",
+						"value": "{{$isoTimestamp}}",
 						"type": "text"
 					},
 					{
 						"key": "trace-id",
-						"value": "1234",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "channel-id",
+						"value": "APP",
 						"type": "text"
 					}
 				],
@@ -127,13 +142,18 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "channel-id",
-						"value": "APP",
+						"key": "timestamp",
+						"value": "{{$isoTimestamp}}",
 						"type": "text"
 					},
 					{
 						"key": "trace-id",
-						"value": "1234",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "channel-id",
+						"value": "APP",
 						"type": "text"
 					}
 				],
