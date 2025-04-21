@@ -4,6 +4,7 @@ import com.demo.poc.commons.core.logging.ThreadContextInjector;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+
 import org.springframework.web.reactive.function.client.ClientRequest;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
@@ -18,8 +19,6 @@ import static com.demo.poc.commons.core.tracing.enums.TraceParamType.TRACE_ID;
 @Slf4j
 @RequiredArgsConstructor
 public class RestClientResponseInterceptor implements ExchangeFilterFunction {
-
-  private static final String SAME_REQUEST = "rest.client";
 
   private final ThreadContextInjector threadContextInjector;
 
