@@ -1,7 +1,7 @@
 package com.demo.poc.entrypoint.districts.helper;
 
 import com.demo.poc.commons.custom.cache.RedisManager;
-import com.demo.poc.commons.custom.constants.SymbolConstants;
+import com.demo.poc.commons.core.constants.Symbol;
 import com.demo.poc.commons.custom.enums.UbigeoType;
 import com.demo.poc.commons.custom.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.districts.repository.DistrictRepository;
@@ -40,7 +40,7 @@ public class DistrictCacheHelper {
 
   private String buildCacheKey(String provinceId, String departmentId) {
     return properties.searchCache(UbigeoType.DISTRICTS.getLabel()).getKeyPrefix()
-        + SymbolConstants.COLON + provinceId
-        + SymbolConstants.COLON + departmentId;
+        + Symbol.COLON + provinceId
+        + Symbol.COLON + departmentId;
   }
 }

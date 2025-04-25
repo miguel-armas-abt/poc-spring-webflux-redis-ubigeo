@@ -1,7 +1,7 @@
 package com.demo.poc.entrypoint.provinces.helper;
 
 import com.demo.poc.commons.custom.cache.RedisManager;
-import com.demo.poc.commons.custom.constants.SymbolConstants;
+import com.demo.poc.commons.core.constants.Symbol;
 import com.demo.poc.commons.custom.enums.UbigeoType;
 import com.demo.poc.commons.custom.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.provinces.repository.ProvinceRepository;
@@ -39,6 +39,6 @@ public class ProvinceCacheHelper {
   }
 
   private String buildCacheKey(String departmentId) {
-    return properties.searchCache(UbigeoType.PROVINCES.getLabel()).getKeyPrefix() + SymbolConstants.COLON + departmentId;
+    return properties.searchCache(UbigeoType.PROVINCES.getLabel()).getKeyPrefix() + Symbol.COLON + departmentId;
   }
 }
