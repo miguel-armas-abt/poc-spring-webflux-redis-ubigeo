@@ -17,12 +17,12 @@
 						"type": "text"
 					},
 					{
-						"key": "trace-id",
-						"value": "{{$guid}}",
+						"key": "traceParent",
+						"value": "{{traceParent}}",
 						"type": "text"
 					},
 					{
-						"key": "channel-id",
+						"key": "channelId",
 						"value": "APP",
 						"type": "text"
 					}
@@ -55,12 +55,12 @@
 						"type": "text"
 					},
 					{
-						"key": "trace-id",
-						"value": "{{$guid}}",
+						"key": "traceParent",
+						"value": "{{traceParent}}",
 						"type": "text"
 					},
 					{
-						"key": "channel-id",
+						"key": "channelId",
 						"value": "APP",
 						"type": "text"
 					}
@@ -99,12 +99,12 @@
 						"type": "text"
 					},
 					{
-						"key": "trace-id",
-						"value": "{{$guid}}",
+						"key": "traceParent",
+						"value": "{{traceParent}}",
 						"type": "text"
 					},
 					{
-						"key": "channel-id",
+						"key": "channelId",
 						"value": "APP",
 						"type": "text"
 					}
@@ -147,12 +147,12 @@
 						"type": "text"
 					},
 					{
-						"key": "trace-id",
-						"value": "{{$guid}}",
+						"key": "traceParent",
+						"value": "{{traceParent}}",
 						"type": "text"
 					},
 					{
-						"key": "channel-id",
+						"key": "channelId",
 						"value": "APP",
 						"type": "text"
 					}
@@ -187,6 +187,41 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"function setTraceParent() {\r",
+					"    const hex = n => [...Array(n)].reduce(s => s + (Math.random()*16|0).toString(16), '');\r",
+					"    const traceId = Math.floor(Date.now()/1e3).toString(16).padStart(8,'0') + hex(24);\r",
+					"\r",
+					"    let spanId;\r",
+					"    do { spanId = hex(16); } while (/^0+$/.test(spanId));\r",
+					"\r",
+					"    //W3C Estandar\r",
+					"    const traceParent = `00-${traceId}-${spanId}-01`;\r",
+					"    pm.globals.set(\"traceParent\", traceParent);\r",
+					"}\r",
+					"\r",
+					"setTraceParent();\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
