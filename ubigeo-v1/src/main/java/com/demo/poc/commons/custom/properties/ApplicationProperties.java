@@ -3,8 +3,8 @@ package com.demo.poc.commons.custom.properties;
 import java.util.Map;
 import java.util.Optional;
 
-import com.demo.poc.commons.core.errors.exceptions.NoSuchCacheConfigException;
 import com.demo.poc.commons.core.properties.ConfigurationBaseProperties;
+import com.demo.poc.commons.custom.exceptions.NoSuchCacheConfigException;
 import com.demo.poc.commons.custom.properties.cache.CacheTemplate;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +23,6 @@ public class ApplicationProperties extends ConfigurationBaseProperties {
 
   public CacheTemplate searchCache(String cacheName) {
     return Optional.ofNullable(cache.get(cacheName))
-        .orElseThrow(NoSuchCacheConfigException::new);
+        .orElseThrow(() -> new NoSuchCacheConfigException(cacheName));
   }
 }
