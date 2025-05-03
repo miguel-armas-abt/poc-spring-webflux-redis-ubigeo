@@ -1,12 +1,12 @@
 server:
-  port: ${SERVER_PORT:8018}
+  port: ${SERVER_PORT:8080}
 
 spring:
   application:
     name: ubigeo-v1
 
   redis:
-    host: localhost
+    host: ${REDIS_DOMAIN}
     port: 6379
     timeout: 2500
   cache:

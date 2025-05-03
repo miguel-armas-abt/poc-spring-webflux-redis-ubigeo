@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d13f1c77-0ff9-4e38-bc65-5ec9df6c77b7",
+		"_postman_id": "ef961586-e4f0-4f19-b319-3b61b19eb64a",
 		"name": "poc-ubigeo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33527392"
+		"_exporter_id": "13773998"
 	},
 	"item": [
 		{
@@ -28,12 +28,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8018/poc/ubigeo/v1/departments",
+					"raw": "http://localhost:8080/poc/ubigeo/v1/departments",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8018",
+					"port": "8080",
 					"path": [
 						"poc",
 						"ubigeo",
@@ -66,12 +66,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8018/poc/ubigeo/v1/provinces?departmentId=01",
+					"raw": "http://localhost:8080/poc/ubigeo/v1/provinces?departmentId=01",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8018",
+					"port": "8080",
 					"path": [
 						"poc",
 						"ubigeo",
@@ -110,12 +110,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8018/poc/ubigeo/v1/districts?departmentId=01&provinceId=99",
+					"raw": "http://localhost:8080/poc/ubigeo/v1/districts?departmentId=01&provinceId=99",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8018",
+					"port": "8080",
 					"path": [
 						"poc",
 						"ubigeo",
@@ -158,12 +158,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8018/poc/ubigeo/v1/ubigeo?departmentId=01&provinceId=01&districtId=01",
+					"raw": "http://localhost:8080/poc/ubigeo/v1/ubigeo?departmentId=01&provinceId=01&districtId=01",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8018",
+					"port": "8080",
 					"path": [
 						"poc",
 						"ubigeo",

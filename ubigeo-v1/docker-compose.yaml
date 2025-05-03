@@ -1,0 +1,24 @@
+services:
+  custom-redis:
+    image: redis:7
+    container_name: custom-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - common-network
+
+  ubigeo-v1:
+    image: miguelarmasabt/ubigeo:v1.0.1
+    container_name: ubigeo-v1
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./variables.env
+    depends_on:
+      - custom-redis
+    networks:
+      - common-network
+
+networks:
+  common-network:
+    driver: bridge
