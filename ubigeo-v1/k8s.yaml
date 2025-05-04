@@ -14,7 +14,7 @@ metadata:
   name: ubigeo-v1-config-map
 data:
     JAVA_OPTS: "-Xms256M -Xmx256M"
-    REDIS_DOMAIN: "localhost"
+    REDIS_DOMAIN: "redis-v7"
 ---
 # Source: generic-backend-chart/templates/service.yaml
 apiVersion: v1

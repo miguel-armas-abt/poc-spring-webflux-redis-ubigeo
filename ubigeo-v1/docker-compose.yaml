@@ -1,7 +1,7 @@
 services:
-  custom-redis:
+  redis-v7:
     image: redis:7
-    container_name: custom-redis
+    container_name: redis-v7
     ports:
       - "6379:6379"
     networks:
@@ -15,10 +15,11 @@ services:
     env_file:
       - ./variables.env
     depends_on:
-      - custom-redis
+      - redis-v7
     networks:
       - common-network
 
 networks:
   common-network:
     driver: bridge
+    external: true

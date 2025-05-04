@@ -5,10 +5,11 @@ spring:
   application:
     name: ubigeo-v1
 
-  redis:
-    host: ${REDIS_DOMAIN}
-    port: 6379
-    timeout: 2500
+  data:
+    redis:
+      host: ${REDIS_DOMAIN}
+      port: 6379
+      timeout: 2500
   cache:
     type: redis #enable cache
 

@@ -53,20 +53,20 @@ docker pull redis:7
 
 ⚙️ Crear namespace y aplicar manifiestos
 ```shell
-kubectl create namespace delivery
-kubectl apply -f ./k8s.yaml -n delivery
-kubectl apply -f ./k8s-redis.yaml -n delivery
+kubectl create namespace ubigeo
+kubectl apply -f ./k8s.yaml -n ubigeo
+kubectl apply -f ./k8s-redis.yaml -n ubigeo
 ```
 
 ⚙️ Eliminar orquestación
 ```shell
-kubectl delete -f ./k8s.yaml -n delivery
-kubectl delete -f ./k8s-redis.yaml -n delivery
+kubectl delete -f ./k8s.yaml -n ubigeo
+kubectl delete -f ./k8s-redis.yaml -n ubigeo
 ```
 
 ⚙️ Port-forward
 ```shell
-kubectl port-forward <pod-id> 8080:8080 -n delivery
+kubectl port-forward <pod-id> 8080:8080 -n ubigeo
 ```
 
 ---
