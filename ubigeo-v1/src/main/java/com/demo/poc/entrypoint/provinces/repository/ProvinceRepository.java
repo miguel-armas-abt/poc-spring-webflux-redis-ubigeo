@@ -1,8 +1,8 @@
 package com.demo.poc.entrypoint.provinces.repository;
 
 import com.demo.poc.commons.core.serialization.JsonSerializer;
-import com.demo.poc.commons.custom.properties.ApplicationProperties;
-import com.demo.poc.commons.custom.enums.UbigeoType;
+import com.demo.poc.commons.properties.ApplicationProperties;
+import com.demo.poc.commons.enums.UbigeoType;
 import com.demo.poc.entrypoint.provinces.repository.entity.ProvinceEntity;
 import lombok.RequiredArgsConstructor;
 

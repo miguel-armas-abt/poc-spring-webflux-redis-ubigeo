@@ -2,7 +2,7 @@ package com.demo.poc.entrypoint.districts.service;
 
 import java.util.Comparator;
 
-import com.demo.poc.commons.custom.exceptions.NoSuchDistrictException;
+import com.demo.poc.entrypoint.districts.exceptions.NoSuchDistrictException;
 import com.demo.poc.entrypoint.districts.helper.DistrictCacheHelper;
 import com.demo.poc.entrypoint.districts.repository.entity.DistrictEntity;
 import lombok.RequiredArgsConstructor;

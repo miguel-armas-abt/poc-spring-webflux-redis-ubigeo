@@ -1,6 +1,6 @@
 package com.demo.poc.entrypoint.ubigeo.rest;
 
-import com.demo.poc.commons.custom.constants.RestConstants;
+import com.demo.poc.commons.constants.RestConstants;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

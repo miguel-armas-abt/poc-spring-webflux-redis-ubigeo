@@ -1,6 +1,6 @@
 package com.demo.poc.entrypoint.departments.rest;
 
-import com.demo.poc.commons.custom.constants.RestConstants;
+import com.demo.poc.commons.constants.RestConstants;
 
 import static org.springframework.http.MediaType.APPLICATION_NDJSON;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;

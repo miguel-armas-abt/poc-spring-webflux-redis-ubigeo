@@ -1,9 +1,9 @@
 package com.demo.poc.entrypoint.provinces.helper;
 
-import com.demo.poc.commons.custom.cache.RedisManager;
+import com.demo.poc.commons.cache.RedisManager;
 import com.demo.poc.commons.core.constants.Symbol;
-import com.demo.poc.commons.custom.enums.UbigeoType;
-import com.demo.poc.commons.custom.properties.ApplicationProperties;
+import com.demo.poc.commons.enums.UbigeoType;
+import com.demo.poc.commons.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.provinces.repository.ProvinceRepository;
 import com.demo.poc.entrypoint.provinces.repository.entity.ProvinceEntity;
 import lombok.RequiredArgsConstructor;

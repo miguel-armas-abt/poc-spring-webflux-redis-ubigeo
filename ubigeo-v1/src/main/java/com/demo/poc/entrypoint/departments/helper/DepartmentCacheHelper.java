@@ -1,8 +1,8 @@
 package com.demo.poc.entrypoint.departments.helper;
 
-import com.demo.poc.commons.custom.cache.RedisManager;
-import com.demo.poc.commons.custom.enums.UbigeoType;
-import com.demo.poc.commons.custom.properties.ApplicationProperties;
+import com.demo.poc.commons.cache.RedisManager;
+import com.demo.poc.commons.enums.UbigeoType;
+import com.demo.poc.commons.properties.ApplicationProperties;
 import com.demo.poc.entrypoint.departments.repository.DepartmentRepository;
 import com.demo.poc.entrypoint.departments.repository.entity.DepartmentEntity;
 import lombok.RequiredArgsConstructor;

@@ -2,7 +2,7 @@ package com.demo.poc.entrypoint.provinces.params;
 
 import java.io.Serializable;
 
-import com.demo.poc.commons.custom.constants.RegexConstants;
+import com.demo.poc.commons.constants.RegexConstants;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;

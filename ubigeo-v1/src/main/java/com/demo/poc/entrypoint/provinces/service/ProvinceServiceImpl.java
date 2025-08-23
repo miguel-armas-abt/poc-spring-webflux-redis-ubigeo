@@ -2,7 +2,7 @@ package com.demo.poc.entrypoint.provinces.service;
 
 import java.util.Comparator;
 
-import com.demo.poc.commons.custom.exceptions.NoSuchDepartmentException;
+import com.demo.poc.entrypoint.departments.exceptions.NoSuchDepartmentException;
 import com.demo.poc.entrypoint.provinces.helper.ProvinceCacheHelper;
 import com.demo.poc.entrypoint.provinces.repository.entity.ProvinceEntity;
 import lombok.RequiredArgsConstructor;

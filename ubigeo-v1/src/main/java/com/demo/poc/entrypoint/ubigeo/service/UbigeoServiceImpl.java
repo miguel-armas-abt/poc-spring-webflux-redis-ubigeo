@@ -1,8 +1,8 @@
 package com.demo.poc.entrypoint.ubigeo.service;
 
-import com.demo.poc.commons.custom.exceptions.NoSuchDepartmentException;
-import com.demo.poc.commons.custom.exceptions.NoSuchDistrictException;
-import com.demo.poc.commons.custom.exceptions.NoSuchProvinceException;
+import com.demo.poc.entrypoint.departments.exceptions.NoSuchDepartmentException;
+import com.demo.poc.entrypoint.districts.exceptions.NoSuchDistrictException;
+import com.demo.poc.entrypoint.provinces.exceptions.NoSuchProvinceException;
 import com.demo.poc.entrypoint.departments.helper.DepartmentCacheHelper;
 import com.demo.poc.entrypoint.departments.repository.entity.DepartmentEntity;
 import com.demo.poc.entrypoint.districts.helper.DistrictCacheHelper;
