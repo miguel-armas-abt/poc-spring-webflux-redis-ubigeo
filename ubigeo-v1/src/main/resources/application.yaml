@@ -25,13 +25,13 @@ configuration:
   cache:
     departments:
       time-to-live: MINUTE
-      key-prefix: poc.departments
+      key-prefix: demo.departments
     provinces:
       time-to-live: MINUTE
-      key-prefix: poc.provinces
+      key-prefix: demo.provinces
     districts:
       time-to-live: MINUTE
-      key-prefix: poc.districts
+      key-prefix: demo.districts
 
 # actuator endpoints
 management:
